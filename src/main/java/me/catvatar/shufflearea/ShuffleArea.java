@@ -24,6 +24,7 @@ import java.util.Map;
 //TODO figure out a way to run replaceWith on block update inside selection
 //TODO add more coments
 //TODO code needs refactoring
+//TODO make //undo work
 public final class ShuffleArea extends JavaPlugin {
 
     Map<Material,Integer> map = new HashMap<>();
