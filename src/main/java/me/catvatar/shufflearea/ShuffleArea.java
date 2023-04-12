@@ -21,6 +21,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.HashMap;
 import java.util.Map;
 
+//TODO figure out a way to run replaceWith on block update inside selection
+//TODO add more coments
+//TODO code needs refactoring
 public final class ShuffleArea extends JavaPlugin {
 
     Map<Material,Integer> map = new HashMap<>();
@@ -39,6 +42,7 @@ public final class ShuffleArea extends JavaPlugin {
         getLogger().info("ShuffleArea has been disabled!");
     }
 
+    //TODO integrate masks
     void Shuffle(CommandSender sender,Region selection,World world,Map<Material,Integer> patternRecipe){
         if(selection != null) {
             RandomPattern pattern = new RandomPattern();
@@ -49,8 +53,8 @@ public final class ShuffleArea extends JavaPlugin {
                     pattern.add(BukkitAdapter.adapt(entry.getKey().createBlockData()),entry.getValue());
                 }
             }
-            //pattern.add(BukkitAdapter.adapt(Material.STONE.createBlockData()),1);
 
+            //TODO check if saveRegion differs from selection
             try (EditSession editSession = WorldEdit.getInstance().newEditSession(world)){
                 RegionFunction set = new BlockReplace(editSession, pattern);
                 RegionVisitor visitor = new RegionVisitor(selection, set);
@@ -76,6 +80,7 @@ public final class ShuffleArea extends JavaPlugin {
                 Region selection = null;
 
                 //handle arguments
+                //TODO refactor arguments handeler
                 if(args.length > 0){
                     String argument = args[0];
                     if(argument.equalsIgnoreCase("clear")) {
