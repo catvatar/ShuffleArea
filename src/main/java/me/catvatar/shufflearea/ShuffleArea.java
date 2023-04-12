@@ -48,6 +48,7 @@ public final class ShuffleArea extends JavaPlugin {
             RandomPattern pattern = new RandomPattern();
             String verbousPattern = "";
             for(Map.Entry<Material,Integer> entry : patternRecipe.entrySet()){
+                //TODO add flags to ignore on demand
                 if(entry.getKey() != Material.AIR){
                     verbousPattern += entry.getValue() + "%, " + entry.getKey();
                     pattern.add(BukkitAdapter.adapt(entry.getKey().createBlockData()),entry.getValue());
