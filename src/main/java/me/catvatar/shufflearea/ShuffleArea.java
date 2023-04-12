@@ -43,6 +43,7 @@ public final class ShuffleArea extends JavaPlugin {
     }
 
     //TODO integrate masks
+    //TODO special case for grass_block
     void Shuffle(CommandSender sender,Region selection,World world,Map<Material,Integer> patternRecipe){
         if(selection != null) {
             RandomPattern pattern = new RandomPattern();
