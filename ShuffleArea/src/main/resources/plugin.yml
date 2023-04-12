@@ -1,0 +1,12 @@
+name: ShuffleArea
+version: '${project.version}'
+main: me.catvatar.shufflearea.ShuffleArea
+api-version: 1.19
+authors: [catvatar]
+description: Plugin for my SMP serwer used for prototyping patterned surfaces
+depend: [WorldEdit]
+commands:
+  shufflearea:
+    description: Shuffle one area onto another
+    aliases: [shfa]
+    usage: "Usage: /<command> [clear|loadSelection|replaceWith|reshuffle]"
